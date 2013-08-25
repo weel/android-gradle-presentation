@@ -19,31 +19,71 @@ $mainColor: #222;
 $headingFont: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $headingColor: #006fac;
 $headingTextShadow: none;
+$heading1TextShadow: $headingTextShadow;
 $headingTextTransform: none;
 $backgroundColor: #FFF;
 $linkColor: #51483D;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: #26351C;
 
-.reveal a:not(.image) {
-  line-height: 1.3em;
-}
+// Theme template ------------------------------
+@import "../template/theme";
 
-body {
-  border: 12px solid #E8E9EA;
-  box-sizing: border-box;
-}
+// Overrides
+//body {
+//  border: 12px solid #E8E9EA;
+//  box-sizing: border-box;
+//}
 
 .reveal .slide-background {
+    border: 12px solid #E8E9EA;
     position: absolute;
     top: 0;
     background-size: 50px 16px;
     background-image: url(../../gfx/iterate.png);
     background-position: 98% 5%;
     background-repeat: no-repeat;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+           -box-sizing: border-box;
+
+}
+.reveal section img {
+  border: none;
+  box-shadow: none;
+}
+
+.reveal ul {
+  list-style-type: none;
+  li:before {
+    content: "—";
+    padding-right: 1em;
+  }
+}
+
+// Custom classes
+.reveal .pushdown {
+  margin-bottom: 50px;
+}
+// Typically used on the initial slide, with a blue bg
+.inverted .reveal {
+  color: #FFF;
+
+  a, h1, h2, h3, h4, h5, h6 {
+    color: #FFF;
+  }
+
+  .slide-background {
+    border: 12px solid #006fac;
+    background-color: #006fac;
+    background-image: url(../../gfx/iterate-white.png);
+  }
+
+}
+
+.reveal a:not(.image) {
+  line-height: 1.3em;
 }
 
 
-// Theme template ------------------------------
-@import "../template/theme";
 // ---------------------------------------------
