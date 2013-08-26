@@ -1311,27 +1311,30 @@ var Reveal = (function(){
 
 		layout();
 
-		// Apply the new state
-		stateLoop: for( var i = 0, len = state.length; i < len; i++ ) {
-			// Check if this state existed on the previous slide. If it
-			// did, we will avoid adding it repeatedly
-			for( var j = 0; j < stateBefore.length; j++ ) {
-				if( stateBefore[j] === state[i] ) {
-					stateBefore.splice( j, 1 );
-					continue stateLoop;
+		if( ! isPrintingPDF() ) {
+			// Apply the new state
+			stateLoop: for( var i = 0, len = state.length; i < len; i++ ) {
+				// Check if this state existed on the previous slide. If it
+				// did, we will avoid adding it repeatedly
+				for( var j = 0; j < stateBefore.length; j++ ) {
+					if( stateBefore[j] === state[i] ) {
+						stateBefore.splice( j, 1 );
+						continue stateLoop;
+					}
 				}
+
+				document.documentElement.classList.add( state[i] );
+
+				// Dispatch custom event matching the state's name
+				dispatchEvent( state[i] );
 			}
 
-			document.documentElement.classList.add( state[i] );
+			// Clean up the remains of the previous state
+			while( stateBefore.length ) {
+				document.documentElement.classList.remove( stateBefore.pop() );
+			}
+    }
 
-			// Dispatch custom event matching the state's name
-			dispatchEvent( state[i] );
-		}
-
-		// Clean up the remains of the previous state
-		while( stateBefore.length ) {
-			document.documentElement.classList.remove( stateBefore.pop() );
-		}
 
 		// If the overview is active, re-activate it to update positions
 		if( isOverview() ) {
