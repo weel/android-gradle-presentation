@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is brown.
@@ -13,7 +12,7 @@ body {
   background-color: white; }
 
 .reveal {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
@@ -27,15 +26,10 @@ body {
 /*********************************************
  * HEADERS
  *********************************************/
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
   color: #006fac;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -57,12 +51,12 @@ body {
   transition: color 0.15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #8b7c69;
+  color: #8b7b69;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
-  color: #fff;
+  color: white;
   background: #25211c; }
 
 /*********************************************
@@ -87,33 +81,29 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-.reveal .controls div.navigate-left,
-.reveal .controls div.navigate-left.enabled {
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
   border-right-color: #51483d; }
 
-.reveal .controls div.navigate-right,
-.reveal .controls div.navigate-right.enabled {
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
   border-left-color: #51483d; }
 
-.reveal .controls div.navigate-up,
-.reveal .controls div.navigate-up.enabled {
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
   border-bottom-color: #51483d; }
 
-.reveal .controls div.navigate-down,
-.reveal .controls div.navigate-down.enabled {
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
   border-top-color: #51483d; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #8b7c69; }
+  border-right-color: #8b7b69; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #8b7c69; }
+  border-left-color: #8b7b69; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #8b7c69; }
+  border-bottom-color: #8b7b69; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #8b7c69; }
+  border-top-color: #8b7b69; }
 
 /*********************************************
  * PROGRESS BAR
@@ -154,11 +144,11 @@ body {
 .reveal .pushdown {
   margin-bottom: 50px; }
 
-.inverted .reveal {
-  color: #FFF; }
-  .inverted .reveal a, .inverted .reveal h1, .inverted .reveal h2, .inverted .reveal h3, .inverted .reveal h4, .inverted .reveal h5, .inverted .reveal h6 {
-    color: #FFF; }
-  .inverted .reveal .slide-background {
+.inverted .reveal, .print-pdf [data-state=inverted] {
+  color: white; }
+  .inverted .reveal a, .inverted .reveal h1, .inverted .reveal h2, .inverted .reveal h3, .inverted .reveal h4, .inverted .reveal h5, .inverted .reveal h6, .print-pdf [data-state=inverted] a, .print-pdf [data-state=inverted] h1, .print-pdf [data-state=inverted] h2, .print-pdf [data-state=inverted] h3, .print-pdf [data-state=inverted] h4, .print-pdf [data-state=inverted] h5, .print-pdf [data-state=inverted] h6 {
+    color: white; }
+  .inverted .reveal .slide-background, .print-pdf [data-state=inverted] .slide-background {
     border: 12px solid #006fac;
     background-color: #006fac;
     background-image: url(../../gfx/iterate-white.png); }
