@@ -7,7 +7,6 @@ theme.
 Relevant documentation:
 
 * [markdown contents](https://github.com/hakimel/reveal.js#markdown)
-* [PDF export](https://github.com/hakimel/reveal.js#pdf-export)
 * [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes)
 * [JavaScript API](https://github.com/hakimel/reveal.js#api)
 * [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations)
@@ -21,7 +20,7 @@ phantomjs.
 **Notice**: This requires that you run `npm install` to download and install
 dependencies.
 
-Run `npm run-script mkpdf` and look for the slides.pdf file.
+Run `grunt pdfify` and look for the slides.pdf file.
 
 
 ## Changes in this fork
@@ -33,6 +32,7 @@ Run `npm run-script mkpdf` and look for the slides.pdf file.
 - Use grunt-sass instead of grunt-contrib-sass to get rid of ruby dependency.
 - PhanomJS dependency and an package.json script directive to export to pdf
   using the print-pdf plugin.
+- Modify print-pdf plugin to be a grunt task.
 
 
 ## License
