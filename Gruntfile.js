@@ -1,4 +1,4 @@
-/* global module:false */
+/* global module,require */
 module.exports = function(grunt) {
 
   // Load dependencies specified in package.json

@@ -26,14 +26,13 @@ $linkColor: #51483D;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: #26351C;
 
-// Theme template ------------------------------
 @import "../template/theme";
 
-// Overrides
-//body {
-//  border: 12px solid #E8E9EA;
-//  box-sizing: border-box;
-//}
+
+.reveal .slide-background.vertical-container {
+    background-image: none;
+    border: none;
+}
 
 .reveal .slide-background {
     border: 12px solid #E8E9EA;
@@ -85,5 +84,3 @@ $selectionBackgroundColor: #26351C;
   line-height: 1.3em;
 }
 
-
-// ---------------------------------------------
