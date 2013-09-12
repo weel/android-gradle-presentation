@@ -79,14 +79,9 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
+          livereload: true,
           port: 8000,
-          base: '.',
-          middleware: function (connect, options) {
-            return [
-              require('connect-livereload')(),
-              connect.static(options.base)
-            ];
-          }
+          base: '.'
         }
       }
     },
@@ -108,9 +103,19 @@ module.exports = function(grunt) {
       ]
     },
 
+    mkpdf: {
+      options: {
+        source: './index.html?print-pdf'
+      }
+    },
+
     watch: {
+      nodescripts: {
+        files: [ 'Gruntfile.js', 'tasks/**/*.js' ],
+        tasks: [ 'jshint' ]
+      },
       main: {
-        files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+        files: [ 'js/reveal.js', 'css/reveal.css' ],
         tasks: 'default'
       },
       theme: {
@@ -137,9 +142,6 @@ module.exports = function(grunt) {
 
   // Theme task
   grunt.registerTask('themes', [ 'sass' ]);
-
-  // PDF task
-  grunt.registerTask('pdfify', [ 'connect', 'mkpdf' ]);
 
   // Package presentation to archive
   grunt.registerTask('package', [ 'default', 'zip' ]);
