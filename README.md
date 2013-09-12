@@ -1,8 +1,12 @@
-# reveal.js with Iterate theme 
+# reveal.js — Iterate style
 
 This is a fork of the brilliant
 [reveal.js](https://github.com/hakimel/reveal.js), styled using an Iterate
 theme.
+
+An on-line CEO-friendly editor exists at [slid.es](http://slid.es/), and can be
+used to produce markup that can be fitted into this theme by editing
+**index.html**.
 
 Relevant documentation:
 
@@ -13,14 +17,21 @@ Relevant documentation:
 
 ## Extra Custom Special Stuff
 
+### Inverted style
+
+Add `data-state="inverted"` to the slide `<section>` tag, and you'll get nice,
+blue slides.
+
 ### PDF Export
 
 Presentations can be exported to PDF via a special print stylesheet and
 phantomjs.
-**Notice**: This requires that you run `npm install` to download and install
-dependencies.
 
-Run `grunt pdfify` and look for the slides.pdf file.
+Run `grunt mkpdf` and look for the slides.pdf file.
+
+**Notice**: This requires that you run `npm install` to download and install
+dependencies, which again depends on [NodeJs](http://nodejs.org/download) being
+installed on your system.
 
 
 ## Changes in this fork
@@ -39,4 +50,5 @@ Run `grunt pdfify` and look for the slides.pdf file.
 
 MIT licensed
 
+Copyright (C) 2013 Pål Ruud, http://ruudud.github.com
 Copyright (C) 2013 Hakim El Hattab, http://hakim.se
