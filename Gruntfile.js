@@ -1,4 +1,6 @@
-/* global module,require */
+/*jshint node:true*/
+'use strict';
+
 module.exports = function(grunt) {
 
   // Load dependencies specified in package.json
@@ -78,8 +80,20 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: '.'
+          base: '.',
+          middleware: function (connect, options) {
+            return [
+              require('connect-livereload')(),
+              connect.static(options.base)
+            ];
+          }
         }
+      }
+    },
+
+    open: {
+      dev: {
+        path: 'http://localhost:<%= connect.server.options.port %>/'
       }
     },
 
@@ -102,6 +116,17 @@ module.exports = function(grunt) {
       theme: {
         files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
         tasks: 'themes'
+      },
+      livereload: {
+        options: {
+          livereload: true
+        },
+        files: [
+          'index.html',
+          'js/{,*/}*.js',
+          'css/{,*/}*.css',
+          'gfx/{,*/}*.{png,jpg,jpeg,gif,webp}'
+        ]
       }
     }
 
@@ -120,6 +145,6 @@ module.exports = function(grunt) {
   grunt.registerTask('package', [ 'default', 'zip' ]);
 
   // Serve presentation locally
-  grunt.registerTask('serve', [ 'connect', 'watch' ]);
+  grunt.registerTask('serve', [ 'connect', 'open', 'watch' ]);
 
 };
