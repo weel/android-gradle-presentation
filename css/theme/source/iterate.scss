@@ -39,9 +39,9 @@ $selectionBackgroundColor: #26351C;
     position: absolute;
     top: 0;
     background-size: 50px 16px;
-    background-image: url(../../gfx/iterate.png);
     background-position: 98% 5%;
     background-repeat: no-repeat;
+    background-image: url(../../gfx/iterate.png);
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
            -box-sizing: border-box;
@@ -75,7 +75,6 @@ $selectionBackgroundColor: #26351C;
   .slide-background {
     border: 12px solid #006fac;
     background-color: #006fac;
-    background-image: url(../../gfx/iterate-white.png);
   }
 
 }

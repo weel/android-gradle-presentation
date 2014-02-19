@@ -155,7 +155,6 @@ body {
   .inverted .reveal .slide-background, .print-pdf [data-state=inverted] .slide-background {
     border: 12px solid #006fac;
     background-color: #006fac;
-    background-image: url(../../gfx/iterate-white.png); }
 
 .reveal a:not(.image) {
   line-height: 1.3em; }
