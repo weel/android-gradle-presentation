@@ -139,12 +139,6 @@ body {
   border: none;
   box-shadow: none; }
 
-.reveal ul {
-  list-style-type: none; }
-  .reveal ul li:before {
-    content: "—";
-    padding-right: 1em; }
-
 .reveal .pushdown {
   margin-bottom: 50px; }
 
