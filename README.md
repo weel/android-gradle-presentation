@@ -1,4 +1,4 @@
-# reveal.js — Iterate style
+# Java Gradle Presentation
 
 This is a fork of the brilliant
 [reveal.js](https://github.com/hakimel/reveal.js), styled using an Iterate
