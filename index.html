@@ -57,12 +57,12 @@
         <section>
           <h3>Why choose Gradle over Maven</h3>
           <ul>
-          <li>XML vs DSL</li>
-          <li>Both uses maven repository</li>
+          <li>DSL instead of XML</li>
           <li>Gradle Wrapper</li>
-          <li>Maven more verbose</li>
           <li>Documentation awesome with Gradle</li>
-          <li>No boilerplate</li>>
+          <li>Gradle Daemon for faster builds</li>
+          <li>Both uses maven repository</li>
+          <li>No boilerplate</li>
           </ul>
         </section>
         <section>
@@ -78,18 +78,37 @@ conversation application/
         </section>
 
         <section>
-        <h2>Minimal Gradle</h2>
+        <h2>Minimal Gradle #1</h2>
           <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 # empty build.gradle 
   </code></pre>
         </section>
      
         <section>
-        <h2>Minimal Gradle</h2>
+        <h2>Minimal Gradle #2</h2>
           <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 # build.gradle
 
 apply plugin:'java'
+apply plugin: 'jetty'
+
+group = 'org.springframework.samples'
+version = '1.0.0-SNAPSHOT'
+
+description = "petclinic"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate', version:'3.1.0'
+    compile 'org.hibernate:hibernate-core:3.6.7'
+}
 
   </code></pre>
         </section>
@@ -97,6 +116,9 @@ apply plugin:'java'
         <section>
         <h2>Gradle Wrapper</h2>
           <p>Minimal wrapper to download and use specified Gradle version.</p>
+          <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+./gradlew tasks  # Downloads gradle and runs command to show tasks
+          </code></pre>
         </section>
 
         <section>
@@ -104,6 +126,15 @@ apply plugin:'java'
           <p>Minimal wrapper to download and use specified Gradle version.</p>
         </section>
         
+        <section>
+          <h2>Apply magic</h2>
+      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# Add to gradle.properties in folder ~/.gradle
+
+org.gradle.daemon=true
+          </code>
+          </pre>
+        </section>
 
         <section>
         <h2>Get started from terminal</h2>
